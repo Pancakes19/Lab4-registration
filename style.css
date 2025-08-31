@@ -12,13 +12,14 @@ body{
     align-items: center;
     background: url(/reg.png);
     background-size: cover;
+    filter: blur();
 
 }
 
 .container{
     width: 100%;
     max-width: 650px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     padding: 28px;
     margin: 0 28px;
     border-radius: 10px;
@@ -87,13 +88,36 @@ body{
     border: none;
     border-radius: 5px;
     color: rgb(209, 209, 209);
-    background: rgba(63, 114, 76, 0.7);
+    background: rgba(117, 5, 39);
 
 }
 
 .form_submit_btn input:hover{
-    background: rgba(56, 204, 93, 0.7);
+    background: rgba(200, 11, 118);
     color: rgb(255, 255, 255);
 
 }
+@media(max-width: 600px){
+    .container{
+        min-width: 280px;
+    }
 
+    .user_input_box{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .user-input-box:nth-child(2n){
+        justify-content: space-between;
+    }
+
+    .main_user_infor{
+        max-height: 380px;
+        overflow: auto;        
+    }
+
+    .main_user_infor::-webkit-scrollbar{
+        width: 0;
+
+    }
+}
