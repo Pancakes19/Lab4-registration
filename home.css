@@ -1,0 +1,160 @@
+:root{
+    --bg:#0b1020;
+    --panel:#121a33;
+    --panel_2:#0f162b;
+    --text:#e9eefc;
+    --muted:#9fb0d9;
+    --primary:#6ea8ff;
+    --accent:#4ce0b3;
+    --danger:#ff6b6b;
+    --warning:#ffcc66;
+    --radius:18px;
+    --gap: 14px;
+    --shadow:0 8px 28px rgba(0,0,0,0.35);    
+
+}
+
+*{box-sizing: border-box;
+
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background: linear-gradient(180deg, var(--bg), #05070f);
+    color: var(--text);
+}
+
+.container{
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 18px;
+
+}
+
+.app_card{
+    background: linear-gradient(180deg, var(--panel), var(--panel_2));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.app_header{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 18px;
+    border-bottom: 1px solid rgba(255,255,255, 0.08);
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.brand .logo{
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background: conic-gradient(from 210deg, var(--primary), var(--accent));
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.brand h1{
+    font-size: 18px;
+    margin: 0;
+}
+
+.tools{
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.search{
+    position: relative;
+    min-width: 240px;
+    flex: 1;
+    max-width: 420px;
+}
+
+.search input{
+    width: 100%;
+    padding: 12px 40px 12px 42px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255, 0.12);
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(6px);
+    color: var(--text);
+    outline: none;
+}
+
+.search .icon{
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    font-size: 18px;
+}
+
+.select, .button{
+    appearance: none;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    padding: 10px 14px;
+    border-radius: 12px;
+}
+
+.button{
+    cursor: pointer;
+}
+
+.grid{
+    display: grid;
+    gap: 16px;
+    padding: 18px;
+}
+
+@media(min-width:700px){
+    .grid{grid-template-columns: repeat(2,1,fr)};
+}
+
+@media(min-width:1000px){
+    .grid{grid-template-columns: repeat(3,1,fr)}
+}
+
+.card{display:flex;gap:14px;padding:14px;background:rgba(0,0,0,.14);border:1px solid rgba(255,255,255,.08);border-radius:18px;transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.avatar{flex:0 0 92px;height:92px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.content{display:flex;flex-direction:column;gap:8px;min-width:0}
+.row{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.name{font-weight:750;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta{font-size:12px;color:var(--muted)}
+.badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge{font-size:11px;padding:6px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06)}
+.badge.success{border-color:rgba(76,224,179,.35);background:rgba(76,224,179,.12)}
+.badge.warn{border-color:rgba(255,204,102,.35);background:rgba(255,204,102,.12)}
+
+
+.actions{display:flex;gap:8px;margin-top:auto}
+.actions .btn{font-size:12px;padding:8px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--text);cursor:pointer}
+.actions .btn.primary{background:var(--primary);border-color:transparent;color:white}
+.actions .btn.danger{border-color:transparent;background:var(--danger);color:#fff}
+
+
+.empty{opacity:.7;text-align:center;padding:32px}
+
+
+/* Tiny toast */
+.toast{position:fixed;inset:auto 16px 16px auto;background:var(--panel);border:1px solid rgba(255,255,255,.14);color:var(--text);padding:10px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);transition:all .2s}
+.toast.show{opacity:1;transform:translateY(0)}

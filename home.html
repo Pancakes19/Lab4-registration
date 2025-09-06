@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+       name="viewport"
+       content="width=device-width, initial-scale=1.0" />
+    <title>Profile Dashboard</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+
+  
+  <div class="container">
+    <div class="app_card">
+      <header class="app_header">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <h1>Kittens & Cats University · Admin</h1>
+        </div>
+        <div class="tools">
+          <div class="search">
+            <span class="icon">🔎</span>
+            <input id="search" type="search" placeholder="Search by name, ID, course…" autocomplete="off" />
+          </div>
+          <select id="sort" class="select" title="Sort">
+            <option value="name">Sort: Name</option>
+            <option value="course">Sort: Course</option>
+            <option value="status">Sort: Status</option>
+          </select>
+          <button class="button" id="add">+ Add Profile</button>
+        </div>
+      </header>
+
+      <section class="grid" id="grid" aria-live="polite"></section>
+      <div class="empty" id="empty" hidden>No profiles found. Try clearing search.</div>
+    </div>
+
+ <h1>Registered Students</h1>
+
+  <table border="1" cellpadding="8">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Programme</th>
+        <th>Year</th>
+        <th>Interests</th>
+        <th>Photo</th>
+      </tr>
+    </thead>
+    <tbody id="studentTableBody">
+      <!-- Filled dynamically -->
+     </tbody>
+  </table> 
+
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer>
+   
+  </footer>
+   <!-- <script src="script.js"></script> -->
+   <script src="home.js"></script>
+  </body>
+</html>

@@ -6,12 +6,15 @@
        name="viewport"
        content="width=device-width, initial-scale=1.0" />
     <title>Registration form</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="regStyle.css" />
   </head>
   <body>
+    <div class="welcome">
+        <h1>Welcome to KCU!!</h1>
+    </div>
     <div class="container">            <!--creating the form container-->
         <h1 class="form-title"> Registration</h1>           
-        <form action="#">
+        <form id="registerForm" action="#">
             <div class="main_user_infor">
                 <!--input for first name-->
                 <div class="user_input_box">
@@ -57,6 +60,7 @@
                         name="Year"
                         required
                         placeholder="Enter your Year "/>
+                        <span id="yearError" style="color:red; font-size:0.9em;"></span>
                         
                 </div>  <!--input for the persons interests-->
                 <div class="user_input_box">
@@ -69,7 +73,7 @@
                         
                 </div>  <!--input for the pfp-->
                 <div class="user_input_box">
-                    <label for="Photo">Passport Photo</label>
+                    <label for="Photo">Select Photo</label>
                     <input type="file"
                         id="Photo"
                         name="Photo"
@@ -80,9 +84,10 @@
             </div>                
                 <div class="form_submit_btn">
                         <input type="submit" value="Register">
-                    </div>   
+                </div>   
             </div>
         </form>
     </div>
+    <script src="register.js"></script>
   </body>
 </html>
