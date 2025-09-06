@@ -21,13 +21,28 @@ function validateYear() {
 // Live validation
 document.getElementById("Year").addEventListener("input", validateYear);
 
-// Target the form
+// Handle form submit
 document.getElementById("registerForm").addEventListener("submit", (e) => {
   e.preventDefault(); // stop refresh
 
   // Block submit if year invalid
   if (!validateYear()) return;
 
+  const fileInput = document.getElementById("Photo");
+  const file = fileInput.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      saveStudent(event.target.result); // Base64 string of image
+    };
+    reader.readAsDataURL(file); // convert image to base64
+  } else {
+    saveStudent("No photo");
+  }
+});
+
+function saveStudent(photoData) {
   // Collect values from form fields
   const student = {
     firstname: document.getElementById("firstname").value.trim(),
@@ -36,9 +51,7 @@ document.getElementById("registerForm").addEventListener("submit", (e) => {
     programme: document.getElementById("Programme").value.trim(),
     year: document.getElementById("Year").value.trim(),
     interests: document.getElementById("Interests").value.trim(),
-    photo: document.getElementById("Photo").value
-      ? document.getElementById("Photo").value.split("\\").pop()
-      : "No photo"
+    photo: photoData
   };
 
   // Get current list or start fresh
@@ -52,5 +65,4 @@ document.getElementById("registerForm").addEventListener("submit", (e) => {
 
   // Redirect to dashboard
   window.location.href = "home.html";
-});
-
+}
